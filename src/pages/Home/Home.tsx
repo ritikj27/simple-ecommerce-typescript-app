@@ -18,9 +18,9 @@ const Home = () => {
     setSearch(e.target.value);
   };
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+  // useEffect(() => {
+  //   console.log(cart);
+  // }, [cart]);
 
   return (
     <>
@@ -53,6 +53,7 @@ const Home = () => {
             key={product.id}
             product={product}
             dispatch={dispatch}
+            cart={cart}
             REDUCER_ACTIONS={REDUCER_ACTIONS}
           />
         ))}

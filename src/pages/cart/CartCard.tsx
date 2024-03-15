@@ -4,6 +4,7 @@ import {
   REDUCER_ACTION,
   REDUCER_ACTION_TYPE,
 } from "../../context/cartContext";
+import { toast } from "react-toastify";
 
 type cardCardType = {
   item: CartItemType;
@@ -68,9 +69,10 @@ export const CartCard = ({ item, dispatch, REDUCER_ACTIONS }: cardCardType) => {
         }).format(lineTotal)}
       </p>
       <button
-        onClick={() =>
-          dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item })
-        }
+        onClick={() => {
+          dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item });
+          toast("Item remove from Cart!!!!");
+        }}
       >
         Remove
       </button>
